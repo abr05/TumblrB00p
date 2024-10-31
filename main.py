@@ -12,7 +12,7 @@ async def main():
         context = await browser.new_context()
         page = await context.new_page()
         await page.goto("https://www.tumblr.com/")
-        await page.frame_locator("#cmp-app-container iframe").get_by_role("button", name="I Agree!").click()
+#        await page.frame_locator("#cmp-app-container iframe").get_by_role("button", name="I Agree!").click()
         await page.get_by_label("Log in").click()
         await page.get_by_label("Continue with email").click()
         await page.get_by_placeholder("Email").click()
@@ -35,7 +35,7 @@ async def main():
         for boop_number in range(0, AMOUNT_OF_BOOPS_TO_SEND):
             print(f"Sending {ACCOUNT_TO_BOOP} boop number: {boop_number+1}")
             await page.get_by_test_id("scroll-container").get_by_label("Boop").click()
-            await page.get_by_label("boop", exact=True).click()
+            await page.get_by_label("B00p", exact=True).click()
             await asyncio.sleep(1.5)
 
         await context.close()
